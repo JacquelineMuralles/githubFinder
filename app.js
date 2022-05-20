@@ -23,6 +23,7 @@ searchUser.addEventListener('keyup', (e) => {
         //Show profile
         //Grabbing profile data to show in UI
         ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
       }
       console.log(data);
     })
