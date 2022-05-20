@@ -6,9 +6,9 @@ class GitHub{
   }
 
   async getUser(user){
-    //getting user profile using the user that is searched and our client id and secret id
+    //getting user profile using the (user) that is searched and our client id and secret id
 
-    
+    //Fetching user from API
     const profileResponse = await fetch(`https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}`);
     //Getting user profile information in JS object notation (JSON)
     const profile = await profileResponse.json();
