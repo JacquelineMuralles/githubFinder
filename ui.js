@@ -33,4 +33,41 @@ class UI{
       <div id="repos"></div>
     `;
   }
+
+  //Show alert message when user not found
+  showAlert(message, className) {
+    //Clear any remaining alerts
+    this.clearAlert();
+    //Create div
+    const div = document.createElement('div');
+    //Add classes
+    div.className = className;
+    //Add text
+    div.appendChild(document.createTextNode(message));
+    //Get parent to insert text
+    const container = document.querySelector('.searchContainer');
+    //Get search box
+    const search = document.querySelector('.search');
+    //Insert alert
+    container.insertBefore(div, search);
+
+    //Timeout after 3 seconds
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  }
+
+  //Clear alert message
+  clearAlert(){
+    const currentAlert = document.querySelector('.alert');
+
+    if(currentAlert){
+      currentAlert.remove();
+    }
+  }
+
+  //Clears ui when userText is cleared
+  clearProfile(){
+    this.profile.innerHTML = "";
+  }
 }
